@@ -25,9 +25,8 @@ let tailsButton = document.getElementById("btn-tails");
 
 headsButton.addEventListener("click",function(){
   clearPictures();
-
   gif.style.display = "block";
-  setInterval(function() {
+  setTimeout(function() {
     gif.style.display = "none";
     console.log(getWinner(humanGuess,machineGuess));
   },5000);
@@ -38,7 +37,7 @@ headsButton.addEventListener("click",function(){
 tailsButton.addEventListener("click",function(){
   clearPictures();
   gif.style.display = "block";
-  setInterval(function() {
+  setTimeout(function() {
     gif.style.display = "none";
     console.log(getWinner(humanGuess,machineGuess));
   },5000);
