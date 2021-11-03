@@ -2,7 +2,7 @@ let humanGuess;
 let machineGuess;
 
 let firework = document.getElementById("img-firework");
-
+let gif = document.getElementById('img-coin');
 let sad = document.getElementById("img-sad");
 
 clearPictures();
@@ -20,22 +20,31 @@ function clearPictures() {
   sad.style.display = "none";
 }
 
-let button = document.getElementById("btn-play");
-button.addEventListener("click", clearPictures);
-
 let headsButton = document.getElementById("btn-head");
 let tailsButton = document.getElementById("btn-tails");
 
 headsButton.addEventListener("click",function(){
+  clearPictures();
+
+  gif.style.display = "block";
+  setInterval(function() {
+    gif.style.display = "none";
+    console.log(getWinner(humanGuess,machineGuess));
+  },5000);
   humanGuess = 1; 
   machineGuess = getRandom();
-  console.log(getWinner(humanGuess,machineGuess));
 })
 
 tailsButton.addEventListener("click",function(){
+  clearPictures();
+  gif.style.display = "block";
+  setInterval(function() {
+    gif.style.display = "none";
+    console.log(getWinner(humanGuess,machineGuess));
+  },5000);
   humanGuess = 0; 
   machineGuess = getRandom();
-  console.log(getWinner(humanGuess,machineGuess));
+  
 })
 
 function getRandom() {
