@@ -1,0 +1,24 @@
+button {
+  width: 247px;
+  height: 70px;
+  margin-bottom: 3px;
+  border: none;
+  font-size: 25px;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+button:hover {
+  color: rgb(146, 127, 255);
+}
+
+#main {
+  margin-left: 500px;
+  margin-top: 80px;
+}
+
+img {
+  width: 498px;
+  height: 498px;
+  border-radius: 10px;
+}
