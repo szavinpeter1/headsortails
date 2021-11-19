@@ -6,10 +6,11 @@ button {
   font-size: 25px;
   font-weight: bold;
   border-radius: 10px;
+  background-color: grey;
 }
 
 button:hover {
-  color: rgb(146, 127, 255);
+  color: rgb(127, 146, 255);
 }
 
 #main {
