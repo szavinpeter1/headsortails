@@ -24,23 +24,25 @@ let headsButton = document.getElementById("btn-head");
 let tailsButton = document.getElementById("btn-tails");
 
 headsButton.addEventListener("click",function(){
+  setColors("grey","grey");
   clearPictures();
   gif.style.display = "block";
   setTimeout(function() {
     gif.style.display = "none";
     console.log(getWinner(humanGuess,machineGuess));
-  },5000);
+  },4800);
   humanGuess = 1; 
   machineGuess = getRandom();
 })
 
 tailsButton.addEventListener("click",function(){
+  setColors("grey","grey");
   clearPictures();
   gif.style.display = "block";
   setTimeout(function() {
     gif.style.display = "none";
     console.log(getWinner(humanGuess,machineGuess));
-  },5000);
+  },4800);
   humanGuess = 0; 
   machineGuess = getRandom();
   
@@ -52,16 +54,29 @@ function getRandom() {
     return rounded;
   }
 
-  function getWinner(humanGuess,machineGuess) {
-    if (machineGuess == humanGuess) {
+  function getWinner(human,machine) {
+    if (machine == human) {
       showPicture(firework);
       hidePicture(sad);
-      return 'You won!' + ' coin: ' + machineGuess + ' your guess: ' + humanGuess;
+      if (machine == 1){
+        setColors("green","red");
+      } else {
+        setColors("red","green");
+      }
+      return 'You won!' + ' coin: ' + machine + ' your guess: ' + human;
     } else {
       showPicture(sad);
-      hidePicture(fireworksss);
-      return 'You lost!' + ' coin: ' + machineGuess + ' your guess: ' + humanGuess;
+      hidePicture(firework);
+      if (human == 1){
+        setColors("red","green");
+      } else {
+        setColors("green","red");
+      }
+      return 'You lost!' + ' coin: ' + machine + ' your guess: ' + human;
     }
   }
 
-  
+  function setColors(color1, color2) {
+    headsButton.style.backgroundColor = color1;
+    tailsButton.style.backgroundColor = color2;
+  }
